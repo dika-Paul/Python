@@ -1,4 +1,4 @@
-from time import time, localtime
+from time import time, localtime, sleep
 
 
 class Clock:
@@ -44,3 +44,18 @@ class Clock:
                 self._minute = 0
                 if self.hour == 24:
                     self._hour = 0
+
+    def diplay(self):
+        print("{}: {}: {}".format(self.hour, self.minute, self.second))
+
+
+def main():
+    clock = Clock.now()
+    for i in range(10):
+        clock.diplay()
+        sleep(1)
+        clock.run()
+
+
+if __name__ == "__main__":
+    main()
